@@ -8,6 +8,6 @@
     <Dataset_Release_Date>2013-02-21</Dataset_Release_Date>
     <Dataset_Release_Place>Boulder, Colorado USA</Dataset_Release_Place>
     <Dataset_Publisher>NSIDC DAAC: NASA DAAC at the National Snow and Ice Data Center</Dataset_Publisher>
-    <Online_Resource>findme.xml</Online_Resource>
+    <Online_Resource>http://vast-ocean-6772.herokuapp.com/dummy/findme.xml</Online_Resource>
   </Data_Set_Citation>
 </DIF>
