@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DIF xmlns="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/ http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/dif_v9.7.1.xsd">
+  <Entry_ID>ILATM0</Entry_ID>
+  <Entry_Title>IceBridge ATM L0 Raw Ranges</Entry_Title>
+  <Data_Set_Citation>
+    <Dataset_Creator>Krabill, W. B. </Dataset_Creator>
+    <Dataset_Title>IceBridge ATM L0 Raw Ranges</Dataset_Title>
+    <Dataset_Release_Date>2013-02-21</Dataset_Release_Date>
+    <Dataset_Release_Place>Boulder, Colorado USA</Dataset_Release_Place>
+    <Dataset_Publisher>NSIDC DAAC: NASA DAAC at the National Snow and Ice Data Center</Dataset_Publisher>
+    <Online_Resource>findme.xml</Online_Resource>
+  </Data_Set_Citation>
+</DIF>
