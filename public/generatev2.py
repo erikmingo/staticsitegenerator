@@ -1,13 +1,15 @@
 import random
+#done, next feature that I want to add is to make the .xml distributed randomly
 
 def generateHTMLpage(pageNum, linkName):
+    lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae tortor tincidunt, pulvinar urna sit amet, mollis libero. Phasellus a laoreet purus. Suspendisse sagittis sollicitudin metus, nec venenatis ligula porttitor eget. Duis sed ipsum nisl. Curabitur dignissim vehicula augue, sed congue dui condimentum eget. Nam ante eros, egestas vel tristique a, viverra in leo. Cras commodo ornare dolor a vestibulum. Morbi id lorem fermentum, elementum lacus sed, fermentum nunc. Maecenas vel elit magna. Integer malesuada, metus quis mattis auctor, odio ante placerat justo, eget consectetur magna enim a neque. Etiam sit amet felis vitae urna adipiscing fermentum. Proin eu dolor bibendum, pellentesque ante nec, semper lectus. Proin at quam non massa porttitor luctus id vitae lectus. Praesent mollis non dui non gravida. Etiam ultricies augue accumsan, consequat metus eget, fermentum mi."
     if linkName == 0:
         f = open("dummy/%s.html" % pageNum, 'w')
-        f.write("<html> \n <body> \n <h1>HEY MY page num is %s </h1> \n </body> \n </html>" % pageNum)
+        f.write("<html> \n <body> \n <h1>HEY MY page num is %s </h1> \n <br> \n <p> %s </p></body> \n </html>" %(pageNum, lorem * random.randint(0, 10)))
         f.close
     else:
         f = open("dummy/%s.html" % pageNum, 'w')
-        f.write('<html> \n <body> \n <h1>HEY MY page num is %s </h1> \n <br> \n <a href="%s"> link to %s! </a> <br> \n </body> \n </html>' % (pageNum, linkName, linkName))
+        f.write('<html> \n <body> \n <h1>HEY MY page num is %s </h1> \n <br> \n <a href="%s"> link to %s! </a> <br> \n <br> \n <p> %s </p> \n </body> \n </html>' % (pageNum, linkName, linkName, lorem * random.randint(0, 10)))
         f.close
 
 #    pageName = pageNum + ".html"
@@ -39,8 +41,14 @@ def goodorbadXML(percentofgood):
     else:
         return True
 
+#def variableContent
 
-
+def xmldistribution(numpages, numxml):
+    pagestoxml = (numxml / numpages) * 100
+    if pagestoxml > random.randint(0, 100):
+        return True
+    else:
+        return False
 
 def generateSite(numHTML, numXML, maxDepth, percentofgood):
 
@@ -76,8 +84,13 @@ def generateSite(numHTML, numXML, maxDepth, percentofgood):
 
         else:
                 xmlname = str(q) + ".xml"
+# function to dist xml randomly
                 if depth == 0:
-                    if goodorbadXML(percentofgood):
+                    if 10 >= random.randint(0, 100):
+                        generateHTMLpage(i, 0)
+                        f.write('<a href="dummy/%s.html"> Link to %s </a> \n <br> \n' %(i, i))
+                        i = i + 1
+                    elif goodorbadXML(percentofgood):
                         generateGoodXML(str(q))
                         generateHTMLpage(i, xmlname)
                         f.write('<a href="dummy/%s.html"> Link to %s </a> \n <br> \n' %(i, i))
@@ -100,7 +113,13 @@ def generateSite(numHTML, numXML, maxDepth, percentofgood):
                             f.write('<a href="dummy/%s.html"> Link to %s </a> \n <br> \n' %(i, i))
                             i = i + 1
                         elif z == depth:
-                            if goodorbadXML(percentofgood) == True:
+
+                            if 10 >= random.randint(0, 100):
+                                generateHTMLpage(i, 0)
+                                f.write('<a href="dummy/%s.html"> Link to %s </a> \n <br> \n' %(i, i))
+                                i = i + 1
+
+                            elif goodorbadXML(percentofgood) == True:
                                 generateHTMLpage(lastpage, xmlname)
                                 generateGoodXML(str(q))
                                 q = q + 1
